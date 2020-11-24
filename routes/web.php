@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/references', [ReferenceController::class, 'index']);
+Route::resource('/references', ReferenceController::class);

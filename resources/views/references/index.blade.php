@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ $ref->description }}</td>
                 <td>{{ $ref->url }}</td>
-            <td><a class="btn btn-secondary" href="/references/{{ $ref->id }}/show">Details</a></td>
+            <td><a class="btn btn-secondary" href="/references/{{ $ref->id }}">Details</a></td>
             </tr>
         @endforeach
     </tbody>
