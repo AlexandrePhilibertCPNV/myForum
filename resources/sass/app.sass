@@ -1,0 +1,59 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito')
+
+// Variables
+@import 'variables'
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap'
+
+*
+    box-sizing: border-box
+
+body
+    margin: 0
+    font-family: Century Gothic, arial
+
+.border-red
+    border-color: rgb(197, 10, 10) !important
+
+.btn-primary
+    background-color: rgb(197, 56, 56)
+    border-color: rgb(197, 10, 10)
+
+    &:hover,
+    &:focus
+        background-color: rgb(175, 19, 19)
+        border-color: rgb(179, 11, 11)
+
+    &:focus
+        box-shadow: 0 0 0 .25rem rgb(179, 11, 11)
+
+.btn-primary,
+.btn-secondary
+    color: $white
+
+.btn-primary:hover,
+.btn-secondary:hover
+    color: $white !important
+
+
+.btn-primary:focus,
+.btn-secondary:focus
+    color: $white !important
+
+.btn-secondary
+    background-color: rgb(56, 117, 197)
+    border-color: rgb(29, 82, 151)
+
+    &:hover,
+    &:focus
+        background-color: rgb(48, 100, 168)
+        border-color: rgb(40, 88, 151)
+
+    &:focus
+        box-shadow: 0 0 0 .25rem  rgb(40, 88, 151)
+
+#content
+    max-width: 1200px
+    margin: 1rem auto
