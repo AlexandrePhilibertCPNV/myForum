@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/references', ReferenceController::class);
+
+Route::fallback(function() {
+    return view("not_found");
+});
