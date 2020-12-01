@@ -1,10 +1,8 @@
-
-
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTopicsTable extends Migration
 {
@@ -16,14 +14,11 @@ class CreateTopicsTable extends Migration
     public function up()
     {
         Schema::create('topics', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id', true);
             $table->string('description', 5000);
-            $table->integer('theme_id');
-            $table->integer('state_id');
-            $table->integer('user_id');
-            $table->index(["theme_id"]);
-            $table->index(["state_id"]);
-            $table->index(["user_id"]);
+            $table->integer('theme_id')->index('fk_topics_themes_idx');
+            $table->integer('state_id')->index('fk_topics_states1_idx');
+            $table->integer('user_id')->index('fk_topics_users1_idx');
         });
     }
 
@@ -37,4 +32,3 @@ class CreateTopicsTable extends Migration
         Schema::dropIfExists('topics');
     }
 }
-

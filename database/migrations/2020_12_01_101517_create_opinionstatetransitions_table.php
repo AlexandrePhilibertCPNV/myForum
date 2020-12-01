@@ -1,10 +1,8 @@
-
-
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateOpinionstatetransitionsTable extends Migration
 {
@@ -16,12 +14,10 @@ class CreateOpinionstatetransitionsTable extends Migration
     public function up()
     {
         Schema::create('opinionstatetransitions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('from_id');
-            $table->integer('to_id');
-            $table->unique(["from_id", "to_id"]);
-            $table->index(["from_id"]);
-            $table->index(["to_id"]);
+            $table->integer('id', true);
+            $table->integer('from_id')->index('fk_opinionstatetransitions_opinionstates1_idx');
+            $table->integer('to_id')->index('fk_opinionstatetransitions_opinionstates2_idx');
+            $table->unique(['from_id', 'to_id'], 'Uniquetrans');
         });
     }
 
@@ -35,4 +31,3 @@ class CreateOpinionstatetransitionsTable extends Migration
         Schema::dropIfExists('opinionstatetransitions');
     }
 }
-

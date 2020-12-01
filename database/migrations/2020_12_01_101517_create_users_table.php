@@ -1,10 +1,8 @@
-
-
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -16,13 +14,11 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id', true);
             $table->string('first_name', 100);
             $table->string('last_name', 100);
-            $table->string('pseudo', 10);
-            $table->integer('role_id');
-            $table->unique(["pseudo"]);
-            $table->index(["role_id"]);
+            $table->string('pseudo', 10)->unique('pseudo_UNIQUE');
+            $table->integer('role_id')->index('fk_users_roles1_idx');
         });
     }
 
@@ -36,4 +32,3 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
-

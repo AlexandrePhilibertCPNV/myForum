@@ -1,10 +1,8 @@
-
-
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateOpinionsTable extends Migration
 {
@@ -16,14 +14,11 @@ class CreateOpinionsTable extends Migration
     public function up()
     {
         Schema::create('opinions', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id', true);
             $table->string('description', 5000);
-            $table->integer('topic_id');
-            $table->integer('user_id');
-            $table->integer('opinionstate_id');
-            $table->index(["topic_id"]);
-            $table->index(["user_id"]);
-            $table->index(["opinionstate_id"]);
+            $table->integer('topic_id')->index('fk_opinions_topics1_idx');
+            $table->integer('user_id')->index('fk_opinions_users1_idx');
+            $table->integer('opinionstate_id')->index('fk_opinions_opinionstates1_idx');
         });
     }
 
@@ -37,4 +32,3 @@ class CreateOpinionsTable extends Migration
         Schema::dropIfExists('opinions');
     }
 }
-

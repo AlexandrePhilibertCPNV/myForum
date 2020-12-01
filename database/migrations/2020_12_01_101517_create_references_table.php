@@ -1,10 +1,8 @@
-
-
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateReferencesTable extends Migration
 {
@@ -16,9 +14,9 @@ class CreateReferencesTable extends Migration
     public function up()
     {
         Schema::create('references', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id', true);
             $table->string('description', 100);
-            $table->string('url', 2000);
+            $table->string('url', 2000)->nullable();
         });
     }
 
@@ -32,4 +30,3 @@ class CreateReferencesTable extends Migration
         Schema::dropIfExists('references');
     }
 }
-

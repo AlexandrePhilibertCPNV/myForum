@@ -1,10 +1,8 @@
-
-
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateStatesTable extends Migration
 {
@@ -16,9 +14,8 @@ class CreateStatesTable extends Migration
     public function up()
     {
         Schema::create('states', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 45);
-            $table->unique(["name"]);
+            $table->integer('id', true);
+            $table->string('name', 45)->unique('name_UNIQUE');
         });
     }
 
@@ -32,4 +29,3 @@ class CreateStatesTable extends Migration
         Schema::dropIfExists('states');
     }
 }
-
