@@ -20,8 +20,10 @@ class CreateOpinionsTable extends Migration
             $table->string('description', 5000);
             $table->integer('topic_id');
             $table->integer('user_id');
+            $table->integer('opinionstate_id');
             $table->index(["topic_id"]);
             $table->index(["user_id"]);
+            $table->index(["opinionstate_id"]);
         });
     }
 
