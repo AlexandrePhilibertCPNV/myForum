@@ -3,7 +3,7 @@
 @section('title', 'References')
 
 @section('content')
-<a class="btn btn-primary" href="/references/new'">Create</a>
+<a class="btn btn-primary" href="{{ route('references.create') }}">Create</a>
 @if ($references->isEmpty())
 <h2 class="text-center">Aucune références</h2>
 @else
@@ -19,8 +19,8 @@
         @foreach ($references as $ref)
             <tr>
                 <td>{{ $ref->description }}</td>
-                <td>{{ $ref->url }}</td>
-            <td><a class="btn btn-secondary" href="/references/{{ $ref->id }}">Details</a></td>
+                <td><a href="{{ $ref->url }}">{{ $ref->url }}</a></td>
+                <td><a class="btn btn-secondary" href="{{ route('references.show',$ref->id) }}">Details</a></td>
             </tr>
         @endforeach
     </tbody>

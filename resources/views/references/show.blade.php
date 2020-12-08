@@ -17,8 +17,8 @@
             <td>{{ $reference->description }}</td>
             <td>{{ $reference->url }}</td>
             <td>
-                <a class="btn btn-secondary" href="/references/{{ $reference->id }}/edit">Edit</a>
-                <a class="btn btn-primary" href="/references/{{ $reference->id }}" data-confirm="Êtes-vous certains de vouloir supprimer cette référence ?">Delete</a>
+                <a class="btn btn-secondary" href="{{ route('references.edit', $reference->id) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('references.destroy', $reference->id) }}" data-confirm="Êtes-vous certains de vouloir supprimer cette référence ?">Delete</a>
             </td>
         </tr>
     </tbody>
