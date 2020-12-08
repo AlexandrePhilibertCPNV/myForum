@@ -20,7 +20,7 @@ class ReferenceController extends Controller
         $reference->description = $request->input('description');
         $reference->url = $request->input('url');
         $reference->save();
-        return redirect(route('references.index'));
+        return redirect(route('references.index'))->with('message', 'Référence ajoutée');
     }
 
 
@@ -33,7 +33,7 @@ class ReferenceController extends Controller
     public function create()
     {
         $reference = new Reference();
-        return view ('references.create')->with('reference', $reference);
+        return view('references.create')->with('reference', $reference);
     }
 
     public function edit(int $id)
@@ -48,13 +48,17 @@ class ReferenceController extends Controller
         $reference->description = $request->input('description');
         $reference->url = $request->input('url');
         $reference->save();
-        return view('references.show')->with('reference', $reference);
+
+        return redirect(route('references.show', $id))->with([
+            'reference' => $reference,
+            'message' => 'Référence mise à jour'
+        ]);
     }
 
     public function destroy(int $id)
     {
         Reference::destroy($id);
 
-        return redirect(route('references.index'));
+        return redirect(route('references.index'))->with('message', 'Référence supprimée');
     }
 }

@@ -33,6 +33,12 @@
         </div>
     </nav>
     <div id="content">
+        @if ($message = Session::get('message'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="btn-close" data-dismiss="alert"></button>	
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
         @yield('content')
     </div>
 </body>
