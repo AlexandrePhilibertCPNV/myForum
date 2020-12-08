@@ -1,0 +1,51 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "myForum API documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/references": {
+            "get": {
+                "tags": [
+                    "references"
+                ],
+                "summary": "Get references",
+                "description": "Get all references",
+                "operationId": "App\\Http\\Controllers\\API\\ReferenceController::index",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "Display a listing of the resource.",
+                                            "type": "integer",
+                                            "example": "1"
+                                        },
+                                        "description": {
+                                            "description": "Display a listing of the resource.",
+                                            "type": "string",
+                                            "example": "Scrum guide"
+                                        },
+                                        "url": {
+                                            "description": "Display a listing of the resource.",
+                                            "type": "string",
+                                            "example": "https://www.scrum.org/resources/scrum-guide"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
