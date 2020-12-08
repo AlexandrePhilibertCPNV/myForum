@@ -33,6 +33,12 @@
         </div>
     </nav>
     <div id="content">
+        @if ($errors->any())
+            <div class="alert alert-danger alert-block">
+            <button type="button" class="btn-close" data-dismiss="alert"></button>	
+                <strong>Une erreur est survenue</strong>
+            </div>
+        @endif
         @if ($message = Session::get('message'))
             <div class="alert alert-success alert-block">
                 <button type="button" class="btn-close" data-dismiss="alert"></button>	
