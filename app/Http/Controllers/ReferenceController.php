@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreReference;
 use Illuminate\Http\Request;
 
 use App\Models\Reference;
@@ -14,7 +15,7 @@ class ReferenceController extends Controller
         return view('references.index')->with('references', $references);
     }
 
-    public function store(Request $request)
+    public function store(StoreReference $request)
     {
         $reference = new Reference();
         $reference->description = $request->input('description');
