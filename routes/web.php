@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReferenceController;
+use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\TopicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +17,11 @@ use App\Http\Controllers\ReferenceController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::resource('/references', ReferenceController::class);
+Route::resource('/themes', ThemeController::class);
+Route::resource('/topics', TopicController::class);
 
 Route::fallback(function() {
     return view("not_found");
