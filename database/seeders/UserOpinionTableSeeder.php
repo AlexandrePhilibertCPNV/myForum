@@ -4,8 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-
-class UsersCommentOpinionsTableSeeder extends Seeder
+class UserOpinionTableSeeder extends Seeder
 {
 
     /**
@@ -15,12 +14,12 @@ class UsersCommentOpinionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('users_comment_opinions')->delete();
-        
-        \DB::table('users_comment_opinions')->insert(array (
-            0 => 
+
+        \DB::table('user_opinion')->delete();
+
+        \DB::table('user_opinion')->insert(array (
+            0 =>
             array (
                 'id' => 1,
                 'user_id' => 1,
@@ -28,7 +27,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Je dirais même qu\'il est essentiel !',
                 'points' => 1,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'user_id' => 2,
@@ -36,7 +35,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Personnellement, je trouve le code plus lisible quand tout est sur une seule ligne...',
                 'points' => -1,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'user_id' => 5,
@@ -44,7 +43,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Tout à fait d\'accord, un disque dur coût tout de même entre 50-100 Euro',
                 'points' => 1,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'user_id' => 5,
@@ -52,7 +51,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'JQuery est en effet devenu inutile de nos jours, il est malheuresement encore présent dans beaucoup de site',
                 'points' => 1,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'user_id' => 4,
@@ -60,7 +59,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'On peut utiliser airodump pour capturer le handshake',
                 'points' => 0,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'user_id' => 4,
@@ -68,7 +67,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Attention d\'avoir une liste de mot de passe suffisament ciblée pour pas que ça prenne des années ;D',
                 'points' => 0,
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'user_id' => 7,
@@ -76,7 +75,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Merci de m\'avoir aidé!',
                 'points' => 1,
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
                 'user_id' => 7,
@@ -84,7 +83,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'C\'est faux! J\'ai pris 2 heures pour le lire...',
                 'points' => -1,
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 9,
                 'user_id' => 7,
@@ -92,7 +91,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Je suis d\'accord, il est super puissant!',
                 'points' => 1,
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 10,
                 'user_id' => 9,
@@ -100,7 +99,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Je suis d\'accord.',
                 'points' => 1,
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 11,
                 'user_id' => 1,
@@ -108,7 +107,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Qu\'est-ce que ça a à voir avec le sujet ???',
                 'points' => -1,
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 12,
                 'user_id' => 1,
@@ -116,7 +115,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Juste. GhostVPN est une bonne alternative sur OSX',
                 'points' => 1,
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 13,
                 'user_id' => 6,
@@ -124,7 +123,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Je suis bien d\'accord et je ne pense pas que ce soit possible dans tout les cas',
                 'points' => 1,
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 14,
                 'user_id' => 2,
@@ -132,7 +131,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Merci mais je n\'aime pas les vidéos de Linus Tech Tips car il est Canadien.',
                 'points' => -1,
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 15,
                 'user_id' => 9,
@@ -140,7 +139,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Totalement d\'accord. La compréhension du code est grandement améliorée.',
                 'points' => 1,
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 16,
                 'user_id' => 7,
@@ -148,7 +147,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Désolé j\'ai mal compris',
                 'points' => 1,
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 17,
                 'user_id' => 11,
@@ -156,7 +155,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'Bon début',
                 'points' => -1,
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 18,
                 'user_id' => 6,
@@ -164,7 +163,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'comment' => 'J\'approuve ce choix',
                 'points' => 1,
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 19,
                 'user_id' => 15,
@@ -173,7 +172,7 @@ class UsersCommentOpinionsTableSeeder extends Seeder
                 'points' => 1,
             ),
         ));
-        
-        
+
+
     }
 }
