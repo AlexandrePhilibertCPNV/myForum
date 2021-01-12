@@ -19,9 +19,15 @@ use App\Http\Controllers\TopicController;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 Route::resource('/references', ReferenceController::class);
 Route::resource('/themes', ThemeController::class);
 Route::resource('/topics', TopicController::class);
+
+require __DIR__.'/auth.php';
 
 Route::fallback(function() {
     return view("not_found");

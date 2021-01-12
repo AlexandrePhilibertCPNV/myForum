@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light px-3 border-top border-red border-4">
+    <nav class="navbar navbar-light bg-light px-3 border-4 border-left-0 border-right-0 border-bottom-0  border-red">
         <div class="row">
             <div class="col">
                 <a class="navbar-brand" href="/">MyForum</a>
