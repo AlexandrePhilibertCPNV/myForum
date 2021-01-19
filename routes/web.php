@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\TopicController;
+use App\Http\Controllers\OpinionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::post('opinions/comment/', [OpinionController::class, 'newComment'])->name('opinions.comment');
+Route::Resource('opinions', OpinionController::class);
 Route::resource('/references', ReferenceController::class);
 Route::resource('/themes', ThemeController::class);
 Route::resource('/topics', TopicController::class);

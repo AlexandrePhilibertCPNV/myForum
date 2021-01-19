@@ -23,12 +23,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <a class="btn btn-primary" href="{{ url('/themes') }}">Gestion des thèmes</a>
-                <a class="btn btn-primary" href="{{ url('/references')}}">Gestion des références</a>
-                <a class="btn btn-primary" href="{{ url('/roles')}}">Gestion des rôles</a>
-                <a class="btn btn-primary" href="{{ url('/states')}}">Gestion des états</a>
-                <a class="btn btn-primary" href="{{ url('/moderation')}}">Modération</a>
+            <div class="col d-flex">
+                @if (Auth::user())
+                    <form method="post" class="mx-1" action="{{ route('logout') }}">
+                        @csrf
+                        <button type=submit class="btn btn-primary">Logout {{ Auth::user()->pseudo }}</button>
+                    </form>
+                @else
+                    <a class="btn btn-primary" href="{{ route('login') }}" class="btn danger-color">Login</a></li>
+                @endif
+                <a class="btn btn-primary mx-1" href="{{ url('/themes') }}">Gestion des thèmes</a>
+                <a class="btn btn-primary mx-1" href="{{ url('/references')}}">Gestion des références</a>
+                <a class="btn btn-primary mx-1" href="{{ url('/roles')}}">Gestion des rôles</a>
+                <a class="btn btn-primary mx-1" href="{{ url('/states')}}">Gestion des états</a>
+                <a class="btn btn-primary mx-1" href="{{ url('/moderation')}}">Modération</a>
             </div>
         </div>
     </nav>
